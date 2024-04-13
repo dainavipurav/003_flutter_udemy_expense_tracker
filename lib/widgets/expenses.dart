@@ -18,9 +18,17 @@ class _ExpensesState extends State<Expenses> {
     showModalBottomSheet(
       context: context,
       builder: (ctx) {
-        return const NewExpense();
+        return NewExpense(
+          addNewExpense: _addNewExpense,
+        );
       },
     );
+  }
+
+  void _addNewExpense(Expense newExpense) {
+    setState(() {
+      _registeredExpenses.add(newExpense);
+    });
   }
 
   final List<Expense> _registeredExpenses = [
