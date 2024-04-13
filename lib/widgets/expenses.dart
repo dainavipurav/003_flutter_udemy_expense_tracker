@@ -17,6 +17,7 @@ class _ExpensesState extends State<Expenses> {
   void _presentModelBottmSheet() {
     showModalBottomSheet(
       context: context,
+      isScrollControlled: true,
       builder: (ctx) {
         return NewExpense(
           addNewExpense: _addNewExpense,
